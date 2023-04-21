@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(53, 50, 48);
+}
+.box {
+  display: block;
+  /* display: none; */
+  height: 434px;
+}
+.box2 {
+  display: none;
+  height: 400px;
+}
+.box,
+.box2 {
+  position: relative;
+  background-color: rgb(22, 3, 3);
+  width: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.box::before,
+.box2::before {
+  content: "";
+  position: absolute;
+  height: 420px;
+  width: 380px;
+  background: linear-gradient(0deg, rgb(92, 233, 45), rgb(227, 39, 108));
+  transform-origin: bottom right;
+  top: -50%;
+  left: -50%;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.box::after,
+.box2::after {
+  content: "";
+  position: absolute;
+  height: 420px;
+  width: 380px;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    rgb(233, 45, 45),
+    rgb(48, 243, 9)
+  );
+  transform-origin: bottom right;
+  top: -50%;
+  left: -50%;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.form {
+  position: absolute;
+  background-color: rgb(32, 30, 30);
+  inset: 2px;
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form h2 {
+  color: aliceblue;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.inputBox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  /* background: linear-gradient(0deg, transparent, white, black); */
+  border: none;
+  outline: none;
+  color: #e2e3ea;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  padding-right: 30px;
+}
+.inputBox span {
+  position: absolute;
+  left: 0;
+
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: aqua;
+  transform: translateY(-34px);
+  font-size: 0.75em;
+}
+.inputBox i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 2px;
+  background-color: aqua;
+}
+
+.sub {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  margin-top: 13px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.sub::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 100px;
+  background: linear-gradient(0deg, rgb(45, 233, 105), rgb(39, 227, 77));
+  transform-origin: bottom right;
+  top: -50%;
+  left: -50%;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.sub input {
+  position: absolute;
+  background-color: rgb(32, 30, 30);
+  inset: 2px;
+  z-index: 10;
+  border-radius: 5px;
+  color: greenyellow;
+}
+.visi {
+  position: absolute;
+  color: gray;
+  bottom: 12px;
+  right: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* main content is starting now */
